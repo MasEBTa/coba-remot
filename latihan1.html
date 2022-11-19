@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Push</title>
+</head>
+<body>
+	<!-- 
+		Misalkan kita memiliki repository di komputer lokal, namun kita belum memiliki
+		repo di github. kita mau mengirim got lokal kita ke github dan menjadikannya
+		sebagai remote
+	 -->
+	<h1>Membuat Folder Baru</h1>
+	<!-- 
+		1> buka gitbash
+		2> arahkan working direktory ke folder yang ingin di jadikan penyimpanan
+		3> buat folder baru :: mkdir
+				DELL@DESKTOP-4J8626P MINGW64 ~/OneDrive/wpu/github/08 git remote
+				$ mkdir coba-remot
+
+				DELL@DESKTOP-4J8626P MINGW64 ~/OneDrive/wpu/github/08 git remote
+				$ ls
+				buat-repo/  coba-remot/  latihan0.html  latihan1.html
+		4> masuk ke foldernya
+				DELL@DESKTOP-4J8626P MINGW64 ~/OneDrive/wpu/github/08 git remote
+				$ cd coba-remot/
+
+				DELL@DESKTOP-4J8626P MINGW64 ~/OneDrive/wpu/github/08 git remote/coba-remot
+				$ pwd
+				/c/Users/DELL/OneDrive/wpu/github/08 git remote/coba-remot
+		5> buat foldernya menjadi repository
+				DELL@DESKTOP-4J8626P MINGW64 ~/OneDrive/wpu/github/08 git remote/coba-remot
+				$ git init
+				Initialized empty Git repository in C:/Users/DELL/OneDrive/wpu/github/08 git remote/coba-remot/.git/
+
+				DELL@DESKTOP-4J8626P MINGW64 ~/OneDrive/wpu/github/08 git remote/coba-remot (master)
+	 -->
+	<h1>Buat file baru</h1>
+	<!-- 
+		1> buat file baru
+				DELL@DESKTOP-4J8626P MINGW64 ~/OneDrive/wpu/github/08 git remote/coba-remot (master)
+				$ touch indrx.html
+
+				DELL@DESKTOP-4J8626P MINGW64 ~/OneDrive/wpu/github/08 git remote/coba-remot (master)
+				$ ls
+				indrx.html
+		2> mengganti nama file
+				DELL@DESKTOP-4J8626P MINGW64 ~/OneDrive/wpu/github/08 git remote/coba-remot (master)
+				$ mv indrx.html index.html
+
+				DELL@DESKTOP-4J8626P MINGW64 ~/OneDrive/wpu/github/08 git remote/coba-remot (master)
+				$ ls
+				index.html
+	 -->
+	<h1>buat commit pertama</h1>
+	<!-- 
+		1> cek statusnya
+				DELL@DESKTOP-4J8626P MINGW64 ~/OneDrive/wpu/github/08 git remote/coba-remot (master)
+				$ git status
+				On branch master
+
+				No commits yet
+
+				Untracked files:
+				(use "git add <file>..." to include in what will be committed)
+						index.html
+
+				nothing added to commit but untracked files present (use "git add" to track)
+		2> tambah ke staging area
+				DELL@DESKTOP-4J8626P MINGW64 ~/OneDrive/wpu/github/08 git remote/coba-remot (master)
+				$ git add index.html
+
+				DELL@DESKTOP-4J8626P MINGW64 ~/OneDrive/wpu/github/08 git remote/coba-remot (master)
+				$ git status
+				On branch master
+
+				No commits yet
+
+				Changes to be committed:
+				(use "git rm --cached <file>..." to unstage)
+						new file:   index.html
+		3> membuat commit
+				DELL@DESKTOP-4J8626P MINGW64 ~/OneDrive/wpu/github/08 git remote/coba-remot (master)
+				$ git commit -m "membuat file index"
+				[master (root-commit) 6730277] membuat file index
+				1 file changed, 0 insertions(+), 0 deletions(-)
+				create mode 100644 index.html
+	 -->
+	<h1>Membuat commit lagi</h1>
+	<!-- 
+		1> mengedit file
+				DELL@DESKTOP-4J8626P MINGW64 ~/OneDrive/wpu/github/08 git remote/coba-remot (master)
+				$ git status
+				On branch master
+				Changes not staged for commit:
+				(use "git add <file>..." to update what will be committed)
+				(use "git restore <file>..." to discard changes in working directory)
+						modified:   index.html
+		2> commmit
+				DELL@DESKTOP-4J8626P MINGW64 ~/OneDrive/wpu/github/08 git remote/coba-remot (master)
+				$ git commit -am "menambahkan Judul pada file index"
+				[master 00657ff] menambahkan Judul pada file index
+				1 file changed, 12 insertions(+)
+		3> ceh graph nya
+				DELL@DESKTOP-4J8626P MINGW64 ~/OneDrive/wpu/github/08 git remote/coba-remot (master)
+				$ graph
+				* 00657ff (HEAD -> master) menambahkan Judul pada file index
+				* 6730277 membuat file index
+	 -->
+	<h1>Membuat remote</h1>
+	<!-- 
+		1> buka github
+		2> buat repo baru
+		3> buat dengan nama yang sama
+		4> biarkan reponya kosong (jangan buat file readme juga)
+		5> jika di create akan tampil halaman quick set up
+			>> jika di github belum ada dan gi lokal belum ada repository
+				…or create a new repository on the command line
+				echo "# coba-remot" >> README.md
+				git init
+				git add README.md
+				git commit -m "first commit"
+				git branch -M main
+				git remote add origin https://github.com/MasEBTa/coba-remot.git
+				git push -u origin main
+			>> jika di lokal sudah ada repository
+				…or push an existing repository from the command line
+				git remote add origin https://github.com/MasEBTa/coba-remot.git
+				git branch -M main
+				git push -u origin main
+		6> kita gunakan cara ke dua dari nomer 5
+			>> coba cek $ git remote
+					DELL@DESKTOP-4J8626P MINGW64 ~/OneDrive/wpu/github/08 git remote/coba-remot (master)
+					$ git remote
+
+					DELL@DESKTOP-4J8626P MINGW64 ~/OneDrive/wpu/github/08 git remote/coba-remot (master)
+				Belum ada remote nya
+			>> buat remotenya
+				--caranya : $ git remote add <nama remote> "halaman git-nya"
+					DELL@DESKTOP-4J8626P MINGW64 ~/OneDrive/wpu/github/08 git remote/coba-remot (master)
+					$ git remote add cobagit https://github.com/MasEBTa/coba-remot.git
+
+					DELL@DESKTOP-4J8626P MINGW64 ~/OneDrive/wpu/github/08 git remote/coba-remot (master)
+					$ git remote
+					cobagit
+				kita sudah sukses membuat remotenya.
+				coba kita cek lebih lengkap remotenya :
+					DELL@DESKTOP-4J8626P MINGW64 ~/OneDrive/wpu/github/08 git remote/coba-remot (master)
+					$ git remote -v
+					cobagit https://github.com/MasEBTa/coba-remot.git (fetch)
+					cobagit https://github.com/MasEBTa/coba-remot.git (push)
+				sudah terhubung ke remotenya dengan nama cobagit
+			>> buat branch main (boleh tidak)
+				dalam kode quct set ada code pembuatan branch : git branch -M main
+				akan membuat branch main (oada contoh sebelumnya -- clone) ada 2 repo
+				online. itu adalah branhc master dan main. jika kita tidak membuat
+				branch main di sini maka hanya ada 1 branch online yakni master
+			>> set up strim
+				-- $ git push -u cobagit master || tujuan upstrim agar kikta tinggal
+					menuliskan $ git push maka akan otomatis di kirim ke cobagit
+					untuk branch master. (jika kita membuat branch main maka akan
+					dikirim ke branch master dan main| pengiriman upstrim kita harus
+					di arahkan ke main)
+
+						DELL@DESKTOP-4J8626P MINGW64 ~/OneDrive/wpu/github/08 git remote/coba-remot (master)
+						$ git push -u cobagit master
+						Enumerating objects: 6, done.
+						Counting objects: 100% (6/6), done.
+						Delta compression using up to 4 threads
+						Compressing objects: 100% (3/3), done.
+						Writing objects: 100% (6/6), 630 bytes | 90.00 KiB/s, done.
+						Total 6 (delta 0), reused 0 (delta 0), pack-reused 0
+						To https://github.com/MasEBTa/coba-remot.git
+						* [new branch]      master -> master
+						branch 'master' set up to track 'cobagit/master'.
+
+				Kita berhasil melakukan upstrim ke remote cobagit dengan branch master.
+		7> kita sudah membuat remot git di lokal dan githubnya coba cek statusnya
+				DELL@DESKTOP-4J8626P MINGW64 ~/OneDrive/wpu/github/08 git remote/coba-remot (master)
+				$ git status
+				On branch master
+				Your branch is up to date with 'cobagit/master'.
+
+				nothing to commit, working tree clean
+
+				DELL@DESKTOP-4J8626P MINGW64 ~/OneDrive/wpu/github/08 git remote/coba-remot (master)
+				$ graph
+				* 00657ff (HEAD -> master, cobagit/master) menambahkan Judul pada file index
+				* 6730277 membuat file index
+	 -->
+	<h1>Git Push</h1>
+	<!-- 
+		1> misalkan kita membuat sebuah perubahan (membuat commit) di lokal
+				DELL@DESKTOP-4J8626P MINGW64 ~/OneDrive/wpu/github/08 git remote/coba-remot (master)
+				$ git status
+				On branch master
+				Your branch is up to date with 'cobagit/master'.
+
+				Changes not staged for commit:
+				(use "git add <file>..." to update what will be committed)
+				(use "git restore <file>..." to discard changes in working directory)
+						modified:   index.html
+
+				no changes added to commit (use "git add" and/or "git commit -a")
+
+				DELL@DESKTOP-4J8626P MINGW64 ~/OneDrive/wpu/github/08 git remote/coba-remot (master)
+				$ git commit -am "menambahkan list sapaan"
+				[master 0fc2982] menambahkan list sapaan
+				1 file changed, 5 insertions(+), 1 deletion(-)
+		2> coba cek statusnya
+				DELL@DESKTOP-4J8626P MINGW64 ~/OneDrive/wpu/github/08 git remote/coba-remot (master)
+				$ git status
+				On branch master
+				Your branch is ahead of 'cobagit/master' by 1 commit.
+				(use "git push" to publish your local commits)
+
+				nothing to commit, working tree clean
+
+				DELL@DESKTOP-4J8626P MINGW64 ~/OneDrive/wpu/github/08 git remote/coba-remot (master)
+				$ graph
+				* 0fc2982 (HEAD -> master) menambahkan list sapaan
+				* 00657ff (cobagit/master) menambahkan Judul pada file index
+				* 6730277 membuat file index
+			terlihat bahwa branch lokal kita memiliki commit yang lebih maju daripada
+			remot nya
+		3> coba lakukan push
+				DELL@DESKTOP-4J8626P MINGW64 ~/OneDrive/wpu/github/08 git remote/coba-remot (master)
+				$ git push
+				Enumerating objects: 5, done.
+				Counting objects: 100% (5/5), done.
+				Delta compression using up to 4 threads
+				Compressing objects: 100% (2/2), done.
+				Writing objects: 100% (3/3), 326 bytes | 163.00 KiB/s, done.
+				Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+				remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+				To https://github.com/MasEBTa/coba-remot.git
+				00657ff..0fc2982  master -> master
+			
+			kita sudah melakukan push. coba cek statusnya sekarang
+				DELL@DESKTOP-4J8626P MINGW64 ~/OneDrive/wpu/github/08 git remote/coba-remot (master)
+				$ git status
+				On branch master
+				Your branch is up to date with 'cobagit/master'.
+
+				nothing to commit, working tree clean
+
+				DELL@DESKTOP-4J8626P MINGW64 ~/OneDrive/wpu/github/08 git remote/coba-remot (master)
+				$ graph
+				* 0fc2982 (HEAD -> master, cobagit/master) menambahkan list sapaan
+				* 00657ff menambahkan Judul pada file index
+				* 6730277 membuat file index
+			
+			sudah up to date dengan remot cobagit nya
+	 -->
+</body>
+</html>
