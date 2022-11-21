@@ -1,5 +1,10 @@
 ini teks percobaan
 
+<<<<<<< ini dari branch tugasBuatBranch
 tambahan untuk commit
 
 beberapa tambahan lagi
+======= ini dari branch tugasBuatBranch2
+ini teks yang berbeda
+
+ini berbeda lagi
